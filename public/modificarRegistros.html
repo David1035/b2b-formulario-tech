@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="formulario__capturar__datos">
+        <header>
+            <div class="title">
+                <h1 class="title-n2"><a href="tabladatosTigo.html">MODIFICAR N2</a></h1>
+            </div>
+            <div class="list-items">
+                <ul class="list-items__ul">
+                    <li><a href="modificarRegistros.html">MODIFICAR</a></li>
+                    <li><a href="todosLosRegistros.html">REGISTROS</a></li>
+                    <li><a href="n1.html">N1</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="main__container">
+            <div class="input__group--items input__group--items-llamada">
+                <label for="id">ID</label>
+                <input type="text" id="id" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-llamada">
+                <label for="id-llamada">ID LLAMAD</label>
+                <input type="text" id="id-llamada" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-name">
+                <label for="nombre-client">NOMBRE</label>
+                <input type="text" id="nombre-client" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-documen">
+                <label for="document">DOCUMENTO</label>
+                <input type="number" id="document" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-smnet">
+                <label for="smnet">SMNET</label>
+                <input type="number" id="smnet" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-smnet">
+                <label for="tipiWeb">TIPIWEB</label>
+                <input type="text" id="tipiWeb" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-smnet">
+                <label for="tecnologia">TECNOLOGIA</label>
+                <input type="text" id="tecnologia" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-smnet">
+                <label for="tiposervicio">TIPOSERVICIO</label>
+                <input type="text" id="tiposervicio" class="item-input">
+            </div>
+            <div class="input__group--items input__group--items-smnet">
+                <label for="naturaleza">NATURALEZA</label>
+                <input type="text" id="naturaleza" class="item-input">
+            </div>
+
+            <div class="input__group--items input__group--items-observaciones">
+                <label for="observaciones">OBSERVACIONES</label>
+                <textarea id="observaciones" class="input-observaciones"></textarea>
+            </div>
+            
+            <div class="input__group--items-button">
+                <button id="consultar" class="item-button">CONSR</button>
+                <button id="modificar" class="item-button">MODIFICAR</button>
+            </div>
+
+            <div class="input__group--items">
+                <label for="celular">CELULAR</label>
+                <input type="text" id="celular" class="item-input">
+            </div>
+            <div class="input__group--items">
+                <label for="horario_b2b">¿Hora B2B?</label>
+                <input type="text" id="horario_b2b" class="item-input">
+            </div>
+            <div class="input__group--items">
+                <label for="modoback">MODO BACK</label>
+                <input type="text" id="modoback" class="item-input">
+            </div>
+            <div class="input__group--items">
+                <label for="horaFinal">HORA FINAL</label>
+                <input type="text" id="horaFinal" class="item-input">
+            </div>
+            <a href="index.html">N2</a> 
+        </div>
+        <div id="resultado"></div>
+        <div id="conteoDiario"></div>
+    </div>
+    <script src="js/modificarRegistros.js"></script>
+    <script src="js/cambiosTipoServicio.js"></script>
+</body>
+</html>
