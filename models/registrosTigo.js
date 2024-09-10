@@ -8,19 +8,19 @@ const RegistrosTigo = conectarDB.define('registros', {
         primaryKey: true
     },
     id_llamada: {
-        type: DataTypes.STRING, 
+        type: DataTypes.STRING(50),
         allowNull: true
     },
     nombreClient: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: true
     },
     documentoCliente: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: true
     },
     observacionesReporte: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: true
     },
     smnet: {
@@ -28,65 +28,64 @@ const RegistrosTigo = conectarDB.define('registros', {
         allowNull: true
     },
     tipiWeb: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: true
     },
     tecnologia: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: true
     }, 
     tiposervicio: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: true
     },
-    naturaleza:{
-        type: DataTypes.STRING,
-        allowNull:true
+    naturaleza: {
+        type: DataTypes.STRING(50),
+        allowNull: true
     },
-    celular:{
-        type: DataTypes.STRING,
-        allowNull:true
+    celular: {
+        type: DataTypes.STRING(15),
+        allowNull: true
     },
-    horario_b2b:{
-        type: DataTypes.STRING,
-        allowNull:true
+    horario_b2b: {
+        type: DataTypes.STRING(50),
+        allowNull: true
     },
-    modoback:{
-        type: DataTypes.STRING,
-        allowNull:true
+    modoback: {
+        type: DataTypes.STRING(50),
+        allowNull: true
     },
-    nombre_atiende:{
-        type: DataTypes.STRING,
-        allowNull:true
+    nombre_atiende: {
+        type: DataTypes.STRING(100),
+        allowNull: true
     },
-    celular_atiende:{
-        type: DataTypes.STRING,
-        allowNull:true
-    }
-    ,
-    dias_atiende:{
-        type: DataTypes.STRING,
-        allowNull:true
-    }
-    ,
-    horario_atiende:{
-        type: DataTypes.STRING,
-        allowNull:true
+    celular_atiende: {
+        type: DataTypes.STRING(15),
+        allowNull: true
+    },
+    dias_atiende: {
+        type: DataTypes.STRING(50),
+        allowNull: true
+    },
+    horario_atiende: {
+        type: DataTypes.STRING(50),
+        allowNull: true
     },
     fechaActual: {
-        type: DataTypes.STRING,
+        type: DataTypes.DATE,  // Guarda tanto fecha como hora
         allowNull: false
     },
     horaInicial: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATE,  // Guarda tanto fecha como hora
         allowNull: false
     },
     horaFinal: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATE,  // Guarda tanto fecha como hora
         allowNull: false
-    },
-
-
-})
+    }
+}, {
+    tableName: 'registros',
+    timestamps: false
+});
 
 export default RegistrosTigo;
