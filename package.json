@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "sass": "sass --watch public/scss:public/css",
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
