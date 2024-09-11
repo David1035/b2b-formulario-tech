@@ -1,4 +1,4 @@
-// Función para obtener el tiempo total y promedio de la API y mostrarlo en el id 'conteoDiario'
+
 async function mostrarTiempoTotal() {
     try {
         const response = await fetch('/api/registros/tiempoTotal'); 
@@ -8,12 +8,10 @@ async function mostrarTiempoTotal() {
 
         const data = await response.json();
         
-        // Asegúrate de que tiempoGlobal y promedio sean números
-        const tiempoGlobal = Number(data.tiempoGlobal || 0);  // Tiempo total en segundos
-        const promedio = Number(data.promedio || 0);          // Promedio de tiempo en segundos
-        const cantidadIngresos = Number(data.cantidadIngresos || 0);  // Cantidad de registros
+        const tiempoGlobal = Number(data.tiempoGlobal || 0);  
+        const promedio = Number(data.promedio || 0);         
+        const cantidadIngresos = Number(data.cantidadIngresos || 0);  
 
-        // Insertar los valores en el elemento con id 'conteoDiario'
         document.getElementById('conteoDiario').textContent = 
             `AHT: ${promedio.toFixed(0)}, ` +  // Promedio de tiempo en segundos
             `Total: ${tiempoGlobal.toFixed(0)}, ` +  // Tiempo total en segundos
@@ -24,13 +22,13 @@ async function mostrarTiempoTotal() {
     }
 }
 
-// Llama a la función para mostrar el tiempo total cuando sea necesario
-//mostrarTiempoTotal();
+mostrarTiempoTotal();
+
 
 
 
 async function enviarDatosAlServidor() {
-    // Recopila los datos del formulario
+    // Recopila los datos del formulario ok
     
     const data = {
         id_llamada: document.getElementById('id-llamada').value,
@@ -78,7 +76,6 @@ async function enviarDatosAlServidor() {
     } catch (error) {
         console.error('Error al enviar los datos al servidor:', error);
     }
+
     mostrarTiempoTotal();
 }
-
-mostrarTiempoTotal();
