@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 const apiBaseUrl = 'https://b2b-formulario-tech.vercel.app/api'; // URL base de la API en Vercel
 
 // Función para obtener el tiempo total y promedio de la API y mostrarlo en el id 'conteoDiario'
 async function mostrarTiempoTotal() {
     try {
         const response = await fetch(`${apiBaseUrl}/registros/tiempoTotal`);  // Usar URL completa
+=======
+// Función para obtener el tiempo total y promedio de la API y mostrarlo en el id 'conteoDiario'
+async function mostrarTiempoTotal() {
+    try {
+        const response = await fetch('/api/registros/tiempoTotal'); 
+>>>>>>> 5f3a0a3 (backend funcional, desplegado en render)
         if (!response.ok) {
             throw new Error('Error en la respuesta de la API');
         }
@@ -17,8 +24,8 @@ async function mostrarTiempoTotal() {
 
         // Insertar los valores en el elemento con id 'conteoDiario'
         document.getElementById('conteoDiario').textContent = 
-            `AHT: ${promedio.toFixed(0)} segundos, ` +  // Promedio de tiempo en segundos
-            `Total: ${tiempoGlobal.toFixed(0)} segundos, ` +  // Tiempo total en segundos
+            `AHT: ${promedio.toFixed(0)}, ` +  // Promedio de tiempo en segundos
+            `Total: ${tiempoGlobal.toFixed(0)}, ` +  // Tiempo total en segundos
             `Iteraciones: ${cantidadIngresos}`;
     } catch (error) {
         console.error('Error al obtener el tiempo total:', error);
@@ -26,8 +33,14 @@ async function mostrarTiempoTotal() {
     }
 }
 
-// Función para enviar datos al servidor
+// Llama a la función para mostrar el tiempo total cuando sea necesario
+//mostrarTiempoTotal();
+
+
+
 async function enviarDatosAlServidor() {
+    // Recopila los datos del formulario
+    
     const data = {
         id_llamada: document.getElementById('id-llamada').value,
         nombreClient: document.getElementById('nombre-client').value,
@@ -46,12 +59,22 @@ async function enviarDatosAlServidor() {
         dias_atiende: document.getElementById('dias_atiende')?.value || '',
         horario_atiende: document.getElementById('horario_atiende')?.value || '',
         fechaActual: new Date().toISOString().split('T')[0], // Fecha actual en formato YYYY-MM-DD
-        horaInicial: new Date(horaInicial).toISOString(), // Hora inicial en formato ISO
-        horaFinal: new Date().toISOString(), // Hora final en formato ISO
+        horaInicial: new Date(horaInicial).toISOString(), // Hora actual en formato ISO
+        horaFinal: new Date().toISOString(), // Hora actual en formato ISO
     };
 
+    /*// Verifica que el campo id_llamada no esté vacío
+    if (!data.id_llamada) {
+        alert('El ID de llamada es obligatorio.');
+        return;
+    }*/
+        
     try {
+<<<<<<< HEAD
         const response = await fetch(`${apiBaseUrl}/registros`, {  // Usar URL completa
+=======
+        const response = await fetch('/api/registros', {
+>>>>>>> 5f3a0a3 (backend funcional, desplegado en render)
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,10 +91,7 @@ async function enviarDatosAlServidor() {
     } catch (error) {
         console.error('Error al enviar los datos al servidor:', error);
     }
-
-    // Actualizar los datos de tiempo total después de enviar
     mostrarTiempoTotal();
 }
 
-// Llama a la función para mostrar el tiempo total al cargar la página
 mostrarTiempoTotal();
