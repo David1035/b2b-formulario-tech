@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-const apiBaseUrl = 'https://b2b-formulario-tech.vercel.app/api'; // URL base de la API en Vercel
-
-// Función para obtener el tiempo total y promedio de la API y mostrarlo en el id 'conteoDiario'
-async function mostrarTiempoTotal() {
-    try {
-        const response = await fetch(`${apiBaseUrl}/registros/tiempoTotal`);  // Usar URL completa
-=======
 // Función para obtener el tiempo total y promedio de la API y mostrarlo en el id 'conteoDiario'
 async function mostrarTiempoTotal() {
     try {
         const response = await fetch('/api/registros/tiempoTotal'); 
->>>>>>> 5f3a0a3 (backend funcional, desplegado en render)
         if (!response.ok) {
             throw new Error('Error en la respuesta de la API');
         }
@@ -70,11 +61,7 @@ async function enviarDatosAlServidor() {
     }*/
         
     try {
-<<<<<<< HEAD
-        const response = await fetch(`${apiBaseUrl}/registros`, {  // Usar URL completa
-=======
         const response = await fetch('/api/registros', {
->>>>>>> 5f3a0a3 (backend funcional, desplegado en render)
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
